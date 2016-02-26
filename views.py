@@ -47,7 +47,7 @@ def search(request):
 		# else if request.GET['order_by_prst_desc']:
 		# 	order_some = request.GET['order_by_prst_desc']
 
-        # places = ChineseTable.objects.filter(Q(place_for_service_text__icontains=q,price_start_number__lte= price_start) | Q(price_start_number__lte = price_end),Q(price_end_number__gte= price_start) | Q(price_end_number__gte = price_end)).order_by('price_start_number')
-        # setMenu = SetMenu.objects.all()
-        # return render(request, 'caterlist/chinesetable_searchresult.html',
-        #     {'places': places, 'order': order_some, 'url_order_by_prst_asc':url_order_by_prst_asc, 'url_order_by_prst_desc': url_order_by_prst_desc, 'url_order_by_pren_asc':url_order_by_pren_asc, 'url_order_by_pren_desc':url_order_by_pren_desc, 'setmenu': setMenu,'query': q, 'price_start': price_start, 'price_end': price_end})
+        places = ChineseTable.objects.filter(Q(place_for_service_text__icontains=q,price_start_number__lte= price_start) | Q(price_start_number__lte = price_end),Q(price_end_number__gte= price_start) | Q(price_end_number__gte = price_end)).order_by('price_start_number')
+        setMenu = SetMenu.objects.all()
+        return render(request, 'caterlist/chinesetable_searchresult.html',
+            {'places': places, 'order': order_some, 'url_order_by_prst_asc':url_order_by_prst_asc, 'url_order_by_prst_desc': url_order_by_prst_desc, 'url_order_by_pren_asc':url_order_by_pren_asc, 'url_order_by_pren_desc':url_order_by_pren_desc, 'setmenu': setMenu,'query': q, 'price_start': price_start, 'price_end': price_end})
